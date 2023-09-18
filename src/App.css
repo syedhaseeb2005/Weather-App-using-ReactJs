@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  width: 450px;
+  height: 610px;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 12px;
+  border: 2px solid #111;
+  background-size: cover;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top-bar{
   display: flex;
-  flex-direction: column;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 14px;
+  padding-top: 20px;
+}
+.top-bar input{
+  display: flex;
+  width: 352px;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding-left: 30px;
+  color: #626262;
+  font-size: 20px;
+  font-family: 400;
 }
 
-.App-link {
-  color: #61dafb;
+.Weather-temp{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 5rem;
+} 
+.Weather-Location{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 45px;
+}
+.data-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  color: #fff;
+}
+.element{
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.data{
+  font-size: 34px;
+  font-weight: 400;
+}
+.text{
+  font-size: 20px;
+  font-weight: 400;
+}
+.icon{
+  margin-top: 12px;
+}
+.para{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 70px;
+  color: #fff;
+  font-size: 6rem;
+}
+.tem-min{
+  margin-top: 10px;
+}
+.temp-max{
+  margin-top: 10px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+figure { 
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0; left: 0; right: 0;
+  width: 6.250em; height: 6.250em;
+  animation: rotate 2.4s linear infinite;
+}
+.white { 
+  top: 0; bottom: 0; left: 0; right: 0; 
+  background: white; 
+  animation: flash 2.4s linear infinite;
+  opacity: 0;
+}
+.dot {
+  position: absolute;
+  margin: auto;
+  width: 2.4em; height: 2.4em;
+  border-radius: 100%;
+  transition: all 1s ease;
+}
+.dot:nth-child(2) { top: 0; bottom: 0; left: 0; background: #FF4444; animation: dotsY 2.4s linear infinite; }
+.dot:nth-child(3) { left: 0; right: 0; top: 0; background: #FFBB33; animation: dotsX 2.4s linear infinite; }
+.dot:nth-child(4) { top: 0; bottom: 0; right: 0; background: #99CC00; animation: dotsY 2.4s linear infinite; }
+.dot:nth-child(5) { left: 0; right: 0; bottom: 0; background: #33B5E5; animation: dotsX 2.4s linear infinite; }
+
+@keyframes rotate {
+  0% { transform: rotate( 0 ); }
+  10% { width: 6.250em; height: 6.250em; }
+  66% { width: 2.4em; height: 2.4em; }
+  100%{ transform: rotate(360deg); width: 6.250em; height: 6.250em; }
+}
+
+@keyframes dotsY {
+  66% { opacity: .1; width: 2.4em; }
+  77%{ opacity: 1; width: 0; }
+}
+@keyframes dotsX {
+  66% { opacity: .1; height: 2.4em;}
+  77%{ opacity: 1; height: 0; }
+}
+
+@keyframes flash {
+  33% { opacity: 0; border-radius: 0%; }
+  55%{ opacity: .6; border-radius: 100%; }
+  66%{ opacity: 0; }
+}
+@media (max-width:992px) {
+  .container{
+    max-width: 100%;
+    max-height: 100%;
   }
 }
